@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- arquivo .css utilizado contendo o estilo utilizado -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Projeto</title>
+</head>
+
+<body>
+     <!-- Cabeçalho de informações do sistema -->
+    <header>
+        <div class="title">
+             <div class="tituloPagina">
+                <mark><h1 >Minerador de Veículos na OLX - Cadastro de Buscas </h1></mark>
+            </div>                     
+        </div>
+        <div class="banner">
+                    <img src="img/pexels-pixabay-104836.jpg"
+                alt="y">
+        </div>
+    </header>
+    <!-- Criação de uma div maior com duas outras lado a lado no interior representando áreas para imput de dados e output( apresentação) dos dados, respectivamente  -->    
+    <div class="retangulo"  >    
+    <div class="inputs"  >
+     <!-- Área de inserção de uma nova busca por automóvel -->   
+
+     <!-- Título -->   
+     <mark><h4 style="text-align:center;width:100%;margin-top:5px;">Adicionar nova busca de Automóvel:</h4></mark>
+            <!-- Informações sobre a busca de um modelo de automóvel -->
+            <label for="localizacao" class="label1"> Região:  
+                <select name="localizacao" id="localizacao-select">
+                    <option value="">--Localização--</option>
+                    <option value="RJ, Zona Sul">RJ, Zona Sul</option>
+                    <option value="RJ, Zona Oeste">RJ, Zona Oeste</option>
+                    <option value="RJ, Zona Norte">RJ, Zona Norte</option>
+                    <option value="RJ, Baixada">RJ, Baixada</option>
+                    <option value="RJ, Niteroi">RJ, Niteroi</option>
+                    <option value="RJ, Teresópolis">RJ, Teresópolis</option>                    
+                </select>
+            </label>
+    
+            <label for="categoria" class="label1"> Categoria:  
+                <select name="categoria" id="categoria-select">
+                    <option value="">--Selecione uma categoria--</option>
+                    <option value="Carros">Carros</option>
+                    <option value="Motos">Motos</option>
+                    <option value="Caminhões">Caminhões</option>
+                    <option value="Ônibus">Ônibus</option>
+                </select>
+            </label>
+        
+            <label for="marca" class="label1" > Marca:  
+                <select name="marca" id="marca-select">
+                    <option value="">--Selecione uma marca--</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Chevrolet">Chevrolet</option>
+                    <option value="Fiat">Fiat</option>
+                    <option value="Ford">Ford</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="VolksWagen">VolksWagen</option>                     
+                </select>
+            </label>
+            
+            <label for="tipoVeiculos" class="label1" > Tipo:
+                <select name="tipoVeiculos" id="tipoVeiculos-select">
+                    <option value="">--Tipo de Veículo--</option>
+                    <option value="Hatch">Hatch</option>
+                    <option value="Sedã">Sedã</option>
+                    <option value="Suv">Suv</option>
+                    <option value="Pick-Up">Pick-Up</option>
+                    <option value="Conversível">Conversível</option>
+                    <option value="Caminhão Leve">Caminhão Leve</option>
+                    <option value="Caminhão Pesado">Caminhão Pesado</option>
+                    <option value="Motocicleta">Motocicleta</option>                    
+                    <option value="Triciclo">Tricilo</option>                    
+                </select>
+            </label>
+            
+            <label for="tipoCambio" class="label1"> Câmbio:  
+                <select name="tipoCambio" id="tipoCambio-select">
+                    <option value="">--Tipo de Câmbio--</option>
+                    <option value="Manual">Manual</option>
+                    <option value="Automático">Automático</option>                    
+                    <option value="Semi-Automático">Semi-Automático</option>
+                    <option value="Automatizado">Automatizado</option>                    
+                </select>
+            </label>
+            <!-- nome do modelo de automóvel -->
+            <label for="modelo" class="label1"> Modelo:  
+                <input type="text" id="modelo" name="modelo" maxlength="30" size="30" />
+            </label>
+            <!-- parâmetros numéricoas de busca pelo modelo de automóvel -->
+            <label for="anoDesde" class="label1"> Ano de:
+                <input type="number" id="anoDesde" name="anoDesde" required minlength= "4" maxlength="4" size="4" min="1900" max="2025" />
+            </label>
+            <label for="anoAte" class="label1"> Ano Ate:  
+                <input type="number" id="anoAte"  name="anoAte" required minlength= "4" maxlength="4" size="4" min="1900" max="2025" />
+            </label>
+            <label for="kmDesde" class="label1"> Km de:
+                <input type="number"  id="kmDesde" name="kmDesde"   maxlength="6" size="6" />
+            </label>
+            <label for="kmate" class="label1"> Km Ate:  
+                <input type="number" id="kmate" name="kmate"  maxlength="6" size="6"  />
+            </label>
+            
+            <label for="valorDesde" class="label1"> Valor de:
+                <input type="number" id="valorDesde" name="valorDesde"   maxlength="6" size="6"  />
+            </label>
+            <label for="valorate" class="label1"> Valor Ate:  
+                <input type="number" id="valorate" name="valorate"  maxlength="6" size="6"  />
+            </label>
+        <!-- Chamada à API para inserção de um novo Item -->           
+         <button onclick="newItem()" class="addBtn">Adicionar</button>      
+    </div>
+    <!-- Div, representando contemplando as informações de saída, contendo um grid de retorno e campos de busca por nome  --> 
+    <div class="outputs"       
+        <section class="items">
+            <div>
+                <!-- Captura o nome do modelo desejado para pesquisa por um modelo específico. Usa o metodo get único --> 
+                <mark><h4 style="text-align:left;position: relative; left:20px; width:100%;margin-top:5px;">Pesquise pelo 'Modelo' desejado ou clique em 'Todos', para uma visualização completa das buscas cadastradas</h4></mark>
+                <input type="text" id="consultaModelo" name="consultaModelo"  maxlength="30" size="30"  />
+                <button onclick="getModelo()" id="btconsultaModelo" class="ConsultaDados"> Pesquisar</button>
+                <!-- Botão para retornar todos os dados do database a partir do método getlist. --> 
+                <button onclick="getList()" id="btconsultaModelo" class="ConsultaDadosCompleto"> Todos</button>      
+            </div>
+            <div>
+               <!-- Montagem da grade a partir de uma table. --> 
+                <table id="myTable">
+                <tr>
+                    <th>Modelo</th>
+                    <th>Marca</th>                    
+                    <th>Categoria</th>
+                    <th>Tipo</th>
+                    <th>Câmbio</th>
+                    <th>Região</th>         
+                    <th>Ano desde</th>
+                    <th>Ano até</th>
+                    <th>Km desde</th>
+                    <th>Km até</th>                
+                    <th>Valor desde</th>
+                    <th>Valor até</th>
+                    <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+                </tr>
+            </table>
+            </div>
+        </section>
+    </div>
+</div>
+    <!-- script utilizado contendo a lógica de programação javascript utilizada. -->    
+    <script src="scripts.js"></script>
+</body>
+
+</html>
+
+
